@@ -1,0 +1,75 @@
+
+
+    <div class="sidebar">
+        <div class="sidebar-wrapper">
+          <div class="logo">
+            <a target="_blank" rel="sponsored noopener noreferrer" 
+               href="https://appseed.us/admin-dashboards/django-dashboard-black" class="simple-text logo-mini">
+              
+            </a>
+            <a target="_blank" rel="sponsored noopener noreferrer" 
+               href="https://appseed.us/admin-dashboards/django-dashboard-black" class="simple-text logo-normal">
+              Dashboard
+            </a>
+          </div>
+  
+          <ul class="nav">
+          {% if request.user.is_authenticated %}
+  
+            <li class="{% if 'index' in segment %} active {% endif %}">
+              <a href="/">
+                <i class="tim-icons icon-world"></i>
+                <p>Home</p>
+              </a>
+            </li>
+            <li class="{% if 'icons' in segment %} active {% endif %}">
+              <a href="/page3.html">
+                <i class="tim-icons icon-bank"></i>
+                <p>High Court</p>
+              </a>
+            </li>
+            <li class="{% if 'maps' in segment %} active {% endif %}">
+              <a href="{% url 'analysis' %}">
+                <i class="tim-icons icon-chart-bar-32"></i>
+                <p>Case Analysis</p>
+              </a>
+            </li>
+            <li class="{% if 'notifications' in segment %} active {% endif %}">
+              <a href="{% url 'trans' %}">
+                <i class="tim-icons icon-paper"></i>
+                <p>Translation</p>
+              </a>
+            </li>
+            <li class="{% if 'page-user' in segment %} active {% endif %}">
+              <a href="/sec_def.html">
+                <i class="tim-icons icon-zoom-split"></i>
+                <p>Section Definition</p>
+              </a>
+            </li>
+            <li class="{% if 'tables' in segment %} active {% endif %}">
+              <a href="/page4.html">
+                <i class="tim-icons icon-single-copy-04"></i>
+                <p>pending cases</p>
+              </a>
+            </li>
+            <li class="{% if 'typography' in segment %} active {% endif %}">
+              <a href="/contact.html">
+                <i class="tim-icons icon-badge"></i>
+                <p>Contact Details</p>
+              </a>
+            </li>
+            {% else %}
+            <li class="active">
+              <a target="_blank" 
+                 href="https://appseed.us/admin-dashboards/django-dashboard-black-pro">
+                <i class="tim-icons icon-spaceship"></i>
+                <p>PRO Version</p>
+              </a>
+            </li>   
+            {% endif %}
+                      
+          </ul>
+          
+        </div>
+      </div>
+  

@@ -1,0 +1,46 @@
+
+
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <br>
+          <h4>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Menu Bar</h4>
+        </div>
+
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="{% if 'index' in segment %} active {% endif %}">
+            <a href="/">
+              <i class="tim-icons icon-world"></i>
+              <p>Home</p>
+            </a>
+          </li>
+
+          <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="{% url 'analysis' %}">
+              <i class="tim-icons icon-chart-bar-32"></i>
+              <p>Case Analysis</p>
+            </a>
+          </li>
+          <li class="{% if 'notifications' in segment %} active {% endif %}">
+            <a href="{% url 'uploaded_cases' %}">
+              <i class="tim-icons icon-single-copy-04"></i>
+              <p>Uploaded Cases</p>
+            </a>
+          </li>
+
+          {% else %}
+          <li class="active">
+            <a target="_blank" 
+               href="https://appseed.us/admin-dashboards/django-dashboard-black-pro">
+              <i class="tim-icons icon-spaceship"></i>
+              <p>PRO Version</p>
+            </a>
+          </li>   
+          {% endif %}
+                    
+        </ul>
+        
+      </div>
+    </div>
